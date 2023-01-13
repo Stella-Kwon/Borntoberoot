@@ -29,3 +29,8 @@ Firstly, if you want to learn Hacking, to perform your hacking duties safe and m
 Secondly, when you want to learn different O.S, this will be very helpful to use to wide up your skills. 
 Thirdly, from companies perspectives, this is 
 
+*********
+Protocols :
+It is a set of rules that need to be followed by the communicating parties in order to have successful and reliable data communication, regarless of any differences in their internal processes, structures or design = how data is transmitted between different devices in the same network. There is three main types of network; network management protocols, network communication protocols and network security protocol. For examples, there is HTTP and TCP/ip.
+*what is API?
+-API(Application Programming Interface) which is a set of definitions and protocols for building and integrating application software.
