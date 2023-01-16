@@ -1,6 +1,6 @@
 # Borntoberoot
 oral-defence
-
+https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md
 * what is a virtual machine?
   
 Speak in briefly, it is just making another computer inside of your original computer by sharing its hardware resources. 
