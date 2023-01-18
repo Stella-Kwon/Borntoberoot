@@ -135,6 +135,30 @@ By default, UFW is set to deny all incoming traffic and allow all outgoing traff
 
 UFW is not enabled by default on most Linux distributions, but it can be installed and configured on most systems. It can be used in conjunction with other security measures, such as AppArmor, to provide a more comprehensive security solution.
 
+******************
+what is mount points? (in partitioning session.)
+A mount point is a directory on a Linux file system where a file system is attached and made accessible. When a file system is mounted, it becomes available for access and can be interacted with just like any other directory on the file system.
+
+Each file system that is mounted on a Linux system has a unique mount point, which is used to access the files and directories on the file system. For example, the root file system, which is the file system that contains the operating system and system files, is typically mounted at the "/" (root) directory.
+
+Mount points can also be used to mount external storage devices, such as hard drives and USB drives, and network file systems, such as NFS or SMB. In these cases, the mount point is typically a directory within the root file system that is used to access the files on the external storage device or network file system.
+
+When a file system is unmounted, it is detached from the file system hierarchy and is no longer accessible. The process of mounting and unmounting file systems is typically performed by the superuser or by a user with appropriate privileges.
 
 
+****************
+what is file system
+A file system is a method of organizing and storing files on a storage device, such as a hard drive or a flash drive. It provides a way for the operating system to access, manage, and store files and directories, and it controls how the data is stored, retrieved and managed.
+
+A file system organizes data in a hierarchical structure, with directories and subdirectories, similar to how a physical filing system organizes paper documents. Each file and directory is given a unique name and location within the file system, and it can be accessed by the operating system and users through that name and location.
+
+Different file systems have different features and capabilities, such as support for large files, long filenames, and file permissions. Some common file systems are:
+
+NTFS (New Technology File System)
+FAT32 (File Allocation Table 32)
+exFAT (Extended File Allocation Table)
+ext2, ext3, ext4 (extended file systems)
+XFS (eXtended File System)
+Btrfs (B-tree file system)
+The file system also includes the concept of inodes, those are data structure containing information about the file like its permissions, timestamps, ownership and the location of the file data on the storage device.
 
