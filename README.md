@@ -122,6 +122,67 @@ Partitioning can also be used to increase the security of the virtual machine by
 
 In summary, In a virtual machine (VM) system, a partition refers to a section of the virtual machine's virtual storage space that is dedicated to a specific purpose or use. It can be used to separate the virtual machine's operating system, applications, and data from one another, similar to how partitions are used on a physical machine. It can also be used to create multiple virtual hard disks for a virtual machine, each with its own file system and mount point, this allows for better organization and management of the virtual machine's storage, as well as the ability to use different file systems for different purposes. Partitioning can also be used to increase the security of the virtual machine and to improve performance.
 
+******************
+
+what is mount points? (in partitioning session.)
+A mount point is a directory on a Linux file system where a file system is attached and made accessible. When a file system is mounted, it becomes available for access and can be interacted with just like any other directory on the file system.
+
+Each file system that is mounted on a Linux system has a unique mount point, which is used to access the files and directories on the file system. For example, the root file system, which is the file system that contains the operating system and system files, is typically mounted at the "/" (root) directory.
+
+Mount points can also be used to mount external storage devices, such as hard drives and USB drives, and network file systems, such as NFS or SMB. In these cases, the mount point is typically a directory within the root file system that is used to access the files on the external storage device or network file system.
+
+When a file system is unmounted, it is detached from the file system hierarchy and is no longer accessible. The process of mounting and unmounting file systems is typically performed by the superuser or by a user with appropriate privileges.
+
+______________________________________________________
+
+Mounting doesn't physically connect all partitions into one big file system, but it integrates their content into the existing file system hierarchy of the operating system. Each partition retains its independence, but its content becomes accessible through a specified directory (mount point) in the overall file system.
+
+Here are some points to clarify:
+
+Integration, Not Physical Connection:
+
+Mounting allows the content of a partition to be accessed as if it were part of the existing file system. It's a logical integration, not a physical merging of partitions.
+Benefits of Mounting:
+
+Access to Data: You can access and use the data on different partitions without navigating the entire directory structure to reach each one.
+Organization: It allows for better organization of data by making it available at specific points in the file system.
+Compatibility: It enables compatibility with different file systems, facilitating the use of data from partitions with varying formats.
+Security Considerations:
+
+While partitions provide a level of isolation (each partition has its own file system and structure), mounting doesn't compromise this isolation. The files and directories within a mounted partition are accessed through a specified directory, and the operating system ensures security boundaries are maintained.
+Use Cases:
+
+Multi-Boot Systems: In a multi-boot system, mounting allows you to access data from different OS installations without booting into each OS separately.
+Data Separation: If you have separate partitions for system files and user data, mounting allows you to keep user data accessible while maintaining separation from system files.
+Security and Isolation:
+
+If security and isolation are critical, having separate partitions can still offer protection against certain types of issues. For example, if one partition becomes corrupted, it may not affect the others.
+In summary, mounting is a way to logically integrate the content of different partitions into the file system hierarchy. It offers benefits in terms of access, organization, and compatibility without compromising the security and isolation provided by separate partitions. The choice of using separate partitions or integrating them through mounting depends on the specific requirements and use cases of the system.
+
+Partitions are created during the storage configuration process, and mounting is the subsequent step to make their content accessible within the operating system's file system.
+
+****************
+so which means that by partitioning you can install another different operating systems on top of a virtual machine ?? 
+
+Yes, that's correct. Partitioning in a virtual machine allows you to divide the virtual storage into separate sections or partitions. Each partition acts as an independent storage space, and you can install a different operating system on each partition.
+
+Here's a basic overview of how this works:
+
+Create Partitions:
+
+When you create a virtual machine, you can allocate a virtual disk or multiple virtual disks. These disks can be partitioned into separate sections using tools like parted or fdisk within the operating system installer.
+Install Operating Systems:
+
+After partitioning, you can install different operating systems on each partition. During the installation process, the installer will typically prompt you to select the partition where you want to install the operating system.
+Choose Boot Loader Options:
+
+If you're installing multiple operating systems on a single virtual machine, you might need to configure a boot loader (such as GRUB) to manage the boot process. The boot loader allows you to choose which operating system to boot when the virtual machine starts.
+Operating Systems Independence:
+
+Once installed, each operating system within its respective partition is independent of the others. They have their file systems, system files, and configurations isolated from one another.
+This capability is useful for various scenarios, such as testing different operating systems, running multiple services on a single machine, or separating development and production environments within the same virtual machine.
+
+Keep in mind that managing multiple operating systems within a virtual machine requires some knowledge of partitioning, boot loaders, and the specific requirements of each operating system. Additionally, some virtualization platforms provide tools and features to simplify the process of creating and managing virtual machines with multiple operating systems.
 ***************
 what is UFW?
 
@@ -134,16 +195,6 @@ UFW provides a set of commands that allow the user to enable or disable the fire
 By default, UFW is set to deny all incoming traffic and allow all outgoing traffic, this is considered as a secure setup, but it can be customized to allow certain traffic through the firewall. For example, it can be configured to allow incoming traffic on port 22 for SSH, port 80 for HTTP and port 443 for HTTPS.
 
 UFW is not enabled by default on most Linux distributions, but it can be installed and configured on most systems. It can be used in conjunction with other security measures, such as AppArmor, to provide a more comprehensive security solution.
-
-******************
-what is mount points? (in partitioning session.)
-A mount point is a directory on a Linux file system where a file system is attached and made accessible. When a file system is mounted, it becomes available for access and can be interacted with just like any other directory on the file system.
-
-Each file system that is mounted on a Linux system has a unique mount point, which is used to access the files and directories on the file system. For example, the root file system, which is the file system that contains the operating system and system files, is typically mounted at the "/" (root) directory.
-
-Mount points can also be used to mount external storage devices, such as hard drives and USB drives, and network file systems, such as NFS or SMB. In these cases, the mount point is typically a directory within the root file system that is used to access the files on the external storage device or network file system.
-
-When a file system is unmounted, it is detached from the file system hierarchy and is no longer accessible. The process of mounting and unmounting file systems is typically performed by the superuser or by a user with appropriate privileges.
 
 
 ****************
